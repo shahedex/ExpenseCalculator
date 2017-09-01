@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+	<div class="headerclass">
+		<header align="center"><b>Expense Tracker</b></header>
+        	 <div class="innerhead">
+                	 <a href="#">Login</a> | 
+                	 <a href="#">Register</a>
+        	 </div>
+    	 </div>
+	<% document.getElementById("hellotime").innerHTML = Date() %>
+	<div class="toptime">
+		<br><b id="hellotime">Today is : </b><br>
+	</div>
+	<% var total = 0; %>
+	<% var expense = 0; %>
+	<% var last = 0; %>
+	<% items.forEach(function(item) { %>
+		<% if(item.type == "income"){%>
+		<% total = total + Number(item.amount) %>
+		<% } else{%>
+		<% expense = expense + Number(item.amount) %>
+		<% }%>
+	<% }); %>
+	<% last = total-expense; %>
+	<p style="font-size:25px;font-style:bold;" align="center"><b>Summery of this Month</b></p>
+	<div class="totaltable">
+		<table>
+		 	 <tr>
+				 <td>Total Withdrawn</td>
+				 <td>৳<%- total %>.00</td>
+ 			 </tr>
+ 			 <tr>
+   				 <td>Total Expense</td>
+   				 <td>৳<%- expense %>.00</td>
+ 				 </tr>
+ 			 <tr>
+   				 <td>Current Balance</td>
+   				 <td>৳<%- last %>.00</td>
+ 			 </tr>
+		</table>
+	</div><br>
+	<div class="newentry">
+		<p style="font-size:25px;font-style:bold;" align="center"><b>New Transaction</b></p>
+		<form id="insertamount" action="/insertamount" method="post">
+	
+		Transaction Type: 	
+	        <select id="ttype" name="ttype">
+ 			 <option value="income">Income</option>
+		 	 <option value="expense">Expense</option>
+		</select><br>
+		Description: <input id="description" type="text" name="description"><br>
+ 	        Amount:  <input id="amount" type="number" name="amount"><br>
+                <input type="submit" value="Submit">
+		</form>
+	</div><br>
+	<div class="history">
+		<p style="font-size:25px;font-style:bold;" align="center"><b>History</b></p>
+		<table>
+			<tr>
+				<th><b>Category</b></th>
+				<th><b>Amount</b></th>
+				<th><b>Description</b></th>
+			</tr>
+			<% items.forEach(function(item) { %>
+			<tr>
+				<td><%- item.type %></td>
+				<td><%- item.amount %></td>
+				<td><%- item.description %></td>
+			</tr>
+			<% }); %>
+		</table>
+	</div><br>
+	<div class="footerclass">
+		<footer>&copy; Bytebiters</footer>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+.headerclass {
+    padding: 20px;
+    font-size: 40px;
+    font-style: bold;
+    background-color: #2bc43d;
+}
+.footerclass {
+	padding:10px;
+	font-size: 20px;
+	font-style: bold;
+	background-color: #2bc43d;
+	text-align: center;
+}
+.innerhead {
+	margin: 0px;
+	font-size: 17px;
+	text-align: right;
+}
+.toptime {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+body {
+ margin : 0px;
+ font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+  color: #FFFFFF;
+}
+
+table {
+    font-family: "Ubuntu", sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    padding:0px;
+    margin: 0px;
+}
+th {
+	border: 1px solid #000000;
+	text-align: center;
+	font-style: bold;
+	padding: 8px;
+	background-color: #dddddd;
+}
+td {
+    border: 1px solid #000000;
+    text-align: center;
+    font-style: normal;
+    padding: 8px;
+    background-color: #dddddd;
+}
+.newentry { 
+	background-color: #dddddd;
+	border-radius: 10px;
+	border:1px solid black;
+	text-align: center;
+}
